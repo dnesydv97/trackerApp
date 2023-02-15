@@ -1,7 +1,7 @@
 import {FC, ReactNode, ReactElement} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styled from 'styled-components';
-import {spacing} from '@app/common/theme';
+import {spacing} from '../../shared/front/theme';
 import {ActivityIndicator} from 'react-native-paper';
 import Avatar from '../Avatar';
 interface ButtonProps {
@@ -32,9 +32,11 @@ const StyleButton = styled.TouchableOpacity`
     !outline ? theme.colors[color || 'primaryButton'] : 'none'};
   border-width: ${({outline}) => (outline ? 1 : 0)};
   border-color: ${({outline, theme, color}) =>
-    outline ? theme.colors[color || 'primaryButton'] : ``};
-  padding-horizontal: ${({paddingHorizontal, theme}) => theme.spacing[paddingHorizontal] || '7'}px;
-  border-radius: ${({borderRadius, theme}) => theme.spacing[borderRadius || 'xs']}px;
+    outline ? theme.colors[color || 'primaryButton'] : ''};
+  padding-horizontal: ${({paddingHorizontal, theme}) =>
+    theme.spacing[paddingHorizontal] || '7'}px;
+  border-radius: ${({borderRadius, theme}) =>
+    theme.spacing[borderRadius || 'xs']}px;
   padding-top: ${({height}) => (height ? height / 2 - 12 : 6)}px;
   padding-bottom: ${({height}) => (height ? height / 2 - 12 : 6)}px;
 `;
@@ -62,12 +64,18 @@ const Button: FC<ButtonProps> = ({
   ...restProps
 }) => {
   return (
-    <StyleButton {...restProps} outline={outline} onPress={onPress} style={style}>
-      {!!loading ? (
+    <StyleButton
+      {...restProps}
+      outline={outline}
+      onPress={onPress}
+      style={style}>
+      {loading ? (
         <ActivityIndicator size={16} color="white" style={{marginRight: 5}} />
-      ) : !!icon ? (
+      ) : icon ? (
         <>
-          {typeof icon === 'string' && <StyleIcon name={icon} size={iconSize} outline={outline} />}
+          {typeof icon === 'string' && (
+            <StyleIcon name={icon} size={iconSize} outline={outline} />
+          )}
           {typeof icon === 'number' && (
             <Avatar
               source={icon}

@@ -2,12 +2,11 @@ import {FC, useState} from 'react';
 import {FormikErrors, FormikTouched, FormikValues} from 'formik';
 import Div from '../Div';
 import Typography from '../Typography';
-import Input from './Input';
-import Mask from './Mask';
+
 import {get} from 'lodash';
 import {withTheme} from 'styled-components/native';
 
-import {ThemeType} from '@app/utils/theme';
+import {ThemeType} from '../../shared/front/theme';
 interface FormFieldProps {
   label?: string;
   values: FormikValues;
@@ -45,7 +44,10 @@ const testError = (props: any) => {
   if (props.dropdown) {
     return props.errors?.[props.fieldKey] && !!props.submitCount;
   }
-  return props.errors?.[props.fieldKey] && (props.touched?.[props.fieldKey] || !!props.submitCount);
+  return (
+    props.errors?.[props.fieldKey] &&
+    (props.touched?.[props.fieldKey] || !!props.submitCount)
+  );
 };
 
 const FormField: FC<FormFieldProps> = (props, ref?: any) => {

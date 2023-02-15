@@ -24,33 +24,45 @@ const StyleCard = styled.View`
   shadow-color: rgba(0, 0, 0, 0.5);
   elevation: 8;
   background: ${({theme}) => theme.colors.white};
-  padding-horizontal: ${({theme, paddingHorizontal}) => theme.spacing[paddingHorizontal] || 0}px;
+  padding-horizontal: ${({theme, paddingHorizontal}) =>
+    theme.spacing[paddingHorizontal] || 0}px;
   padding-top: ${({theme, paddingTop}) => theme.spacing[paddingTop] || 0}px;
-  padding-bottom: ${({theme, paddingBottom}) => theme.spacing[paddingBottom] || 0}px;
+  padding-bottom: ${({theme, paddingBottom}) =>
+    theme.spacing[paddingBottom] || 0}px;
   margin-top: ${({theme, marginTop}) => theme.spacing[marginTop] || 0}px;
-  margin-bottom: ${({theme, marginBottom}) => theme.spacing[marginBottom] || 0}px;
-  margin-horizontal: ${({theme, marginHorizontal}) => theme.spacing[marginHorizontal] || 0}px;
-  border-radius: ${({borderRadius, theme}) => (borderRadius ? theme.spacing[borderRadius] : 0)};
-  flex-direction: ${({flexDirection}) => flexDirection || `column`};
-  align-items: ${({alignItems}) => alignItems || `baseline`};
-  justify-content: ${({justifyContent}) => justifyContent || `flex-start`};
-  background-color: ${({backgroundColor, theme}) => theme?.colors[backgroundColor || 'white']};
+  margin-bottom: ${({theme, marginBottom}) =>
+    theme.spacing[marginBottom] || 0}px;
+  margin-horizontal: ${({theme, marginHorizontal}) =>
+    theme.spacing[marginHorizontal] || 0}px;
+  border-radius: ${({borderRadius, theme}) =>
+    borderRadius ? theme.spacing[borderRadius] : 0};
+  flex-direction: ${({flexDirection}) => flexDirection || 'column'};
+  align-items: ${({alignItems}) => alignItems || 'baseline'};
+  justify-content: ${({justifyContent}) => justifyContent || 'flex-start'};
+  background-color: ${({backgroundColor, theme}) =>
+    theme?.colors[backgroundColor || 'white']};
 `;
 const StyleTouchableCard = styled.TouchableOpacity`
   shadow-color: rgba(0, 0, 0, 0.5);
   elevation: 8;
   background: ${({theme}) => theme.colors.white};
-  padding-horizontal: ${({theme, paddingHorizontal}) => theme.spacing[paddingHorizontal] || 0}px;
+  padding-horizontal: ${({theme, paddingHorizontal}) =>
+    theme.spacing[paddingHorizontal] || 0}px;
   padding-top: ${({theme, paddingTop}) => theme.spacing[paddingTop] || 0}px;
-  padding-bottom: ${({theme, paddingBottom}) => theme.spacing[paddingBottom] || 0}px;
+  padding-bottom: ${({theme, paddingBottom}) =>
+    theme.spacing[paddingBottom] || 0}px;
   margin-top: ${({theme, marginTop}) => theme.spacing[marginTop] || 0}px;
-  margin-bottom: ${({theme, marginBottom}) => theme.spacing[marginBottom] || 0}px;
-  margin-horizontal: ${({theme, marginHorizontal}) => theme.spacing[marginHorizontal] || 0}px;
-  border-radius: ${({borderRadius, theme}) => (borderRadius ? theme.spacing[borderRadius] : 0)};
-  flex-direction: ${({flexDirection}) => flexDirection || `column`};
-  align-items: ${({alignItems}) => alignItems || `baseline`};
-  justify-content: ${({justifyContent}) => justifyContent || `flex-start`};
-  background-color: ${({backgroundColor, theme}) => theme?.colors[backgroundColor || 'white']};
+  margin-bottom: ${({theme, marginBottom}) =>
+    theme.spacing[marginBottom] || 0}px;
+  margin-horizontal: ${({theme, marginHorizontal}) =>
+    theme.spacing[marginHorizontal] || 0}px;
+  border-radius: ${({borderRadius, theme}) =>
+    borderRadius ? theme.spacing[borderRadius] : 0};
+  flex-direction: ${({flexDirection}) => flexDirection || 'column'};
+  align-items: ${({alignItems}) => alignItems || 'baseline'};
+  justify-content: ${({justifyContent}) => justifyContent || 'flex-start'};
+  background-color: ${({backgroundColor, theme}) =>
+    theme?.colors[backgroundColor || 'white']};
 `;
 const Card: FC<CardProps> = ({children, onPress, touchable, ...restProps}) => {
   if (touchable) {

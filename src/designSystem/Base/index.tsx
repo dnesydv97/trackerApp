@@ -1,11 +1,11 @@
 import {FC, memo, ReactElement, ReactNode} from 'react';
 import styled from 'styled-components';
-import {spacing} from '@app/common/theme';
+import {spacing} from '../../shared/front/theme';
 import Header from '../Header';
 import {SafeAreaView, useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useNavigation} from '@react-navigation/native';
-import useBackButton from '@app/hooks/useBackButton';
-import Button from '../Button'
+import useBackButton from '../../hooks/useBackButton';
+import Button from '../Button';
 
 interface HeaderProps {
   title?: string;
@@ -25,28 +25,28 @@ interface BaseProps {
   withSafeArea?: boolean;
   noBack?: boolean;
   backHandler?: () => void | string;
-  footerComponent?:ReactElement,
-  footerButton?:any
-
+  footerComponent?: ReactElement;
+  footerButton?: any;
 }
 const StyledBase = styled.View`
   background-color: ${({theme}) => theme.colors.white};
-  flex:1;
-  padding-horizontal: ${({theme, paddingHorizontal}) => theme.spacing[paddingHorizontal] || 0}px;
+  flex: 1;
+  padding-horizontal: ${({theme, paddingHorizontal}) =>
+    theme.spacing[paddingHorizontal] || 0}px;
   padding-top: ${({topInset}) => topInset}px;
   padding-bottom: ${({bottomInset}) => bottomInset}px;
-  margin-horizontal: ${({theme, marginHorizontal}) => theme.spacing[marginHorizontal] || 0}px;
+  margin-horizontal: ${({theme, marginHorizontal}) =>
+    theme.spacing[marginHorizontal] || 0}px;
   margin-top: ${({theme, marginTop}) => theme.spacing[marginTop] || 0}px;
-  margin-bottom: ${({theme, marginBottom}) => theme.spacing[marginBottom] || 0}px;
+  margin-bottom: ${({theme, marginBottom}) =>
+    theme.spacing[marginBottom] || 0}px;
 `;
-
 
 const FooterButtonContainer = styled.View<{bottomInset: number}>`
   padding-horizontal: ${({theme}) => theme.spacing.lg}px;
   padding-top: ${({theme}) => theme.spacing.sm}px;
-  padding-bottom:40;
+  padding-bottom: 40;
 `;
-
 
 const Base: FC<BaseProps> = ({
   children,
@@ -84,10 +84,10 @@ const Base: FC<BaseProps> = ({
           {children}
         </>
       )}
-       {!!footerComponent && footerComponent}
+      {!!footerComponent && footerComponent}
       {!!footerButton && (
         <FooterButtonContainer bottomInset={bottom}>
-          <Button {...footerButton} height={50} fontSize='lg' />
+          <Button {...footerButton} height={50} fontSize="lg" />
         </FooterButtonContainer>
       )}
     </StyledBase>

@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "../web",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "lib": ["es2017", "dom"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2015",
+    "noEmit": true,
+    "paths": {
+      "@rentisity/common": ["../common"],
+      "*": [
+        "../../packages/web/node_modules/*",
+        "../../packages/app/node_modules/*"
+      ]
+    }
+  },
+  "exclude": [
+    "../web/node_modules",
+    "../web/babel.config.js",
+    "../web/metro.config.js",
+    "../web/jest.config.js"
+  ]
+}

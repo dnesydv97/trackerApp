@@ -1,23 +1,33 @@
-import React from 'react';
-import {StyleSheet, TouchableOpacity, Text} from 'react-native';
-
-const Button = ({title, onPress}) => {
+import React, {FC} from 'react';
+import {StyleSheet, Text} from 'react-native';
+import styled from 'styled-components';
+interface ButtonProps {
+  title: string;
+  onPress: () => void;
+  style?: any;
+  disabled?: boolean;
+  backgroundColor?: string;
+}
+const StyleTouchableOpacity = styled.TouchableOpacity`
+  padding-top: 10;
+  padding-bottom: 10;
+  border-radius: 5;
+  width: 100%;
+  height: 50px;
+  alignself: center;
+  align-items: center;
+  justify-content: center;
+  background-color: ${({backgroundColor}) => backgroundColor || '#3366FF'};
+`;
+const Button: FC<ButtonProps> = ({title, ...restProps}) => {
   return (
-    <TouchableOpacity style={styles.buttonContainer} onPress={onPress}>
+    <StyleTouchableOpacity {...restProps}>
       <Text style={styles.buttonText}>{title}</Text>
-    </TouchableOpacity>
+    </StyleTouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  buttonContainer: {
-    backgroundColor: '#3366FF',
-    paddingVertical: 10,
-    borderRadius: 5,
-    width: '80%',
-    alignSelf: 'center',
-    marginTop: 90,
-  },
   buttonText: {
     color: 'white',
     textAlign: 'center',

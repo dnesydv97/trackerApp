@@ -1,3 +1,25 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json"
+  "extends": "@tsconfig/react-native/tsconfig.json",
+
+  "compilerOptions": {
+    "target": "es6",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@shared/common": ["./src/shared/common"],
+      "@shared/common/*": ["./src/shared/common/*"],
+      "@shared/front": ["./src/shared/front"],
+      "@shared/front/*":["./src/shared/front/*"],
+      "@designSystem": ["./src/designSystem"]
+  
+    }
+  }
+  // "include": ["src", "../../shared", "webpack"]
 }

@@ -144,8 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				3B4392A12AC88292D35C810B /* Pods-trackerApp.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-trackerApp.release.xcconfig */,
 				5B7EB9410499542E8C5724F5 /* Pods-trackerApp-trackerAppTests.debug.xcconfig */,
+				5709B34CF0A7D63546082F79 /* Pods-trackerApp.release.xcconfig */,
 				89C6BE57DB24E9ADA2F236DE /* Pods-trackerApp-trackerAppTests.release.xcconfig */,
 			);
 			path = Pods;

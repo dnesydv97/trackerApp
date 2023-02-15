@@ -1,6 +1,6 @@
 import {FC} from 'react';
 import styled from 'styled-components';
-import {spacing} from '@app/common/theme';
+import {spacing} from '../../shared/front/theme';
 interface AvatarProps {
   source: any;
   width?: number | string;
@@ -11,8 +11,8 @@ interface AvatarProps {
   circle?: boolean;
 }
 const StyleImage = styled.Image`
-  width: ${({width}) => width || `auto`};
-  height: ${({height}) => height || `auto`};
+  width: ${({width}) => width || 'auto'};
+  height: ${({height}) => height || 'auto'};
   border-radius: ${({borderRadius, theme, circle}) =>
     circle ? 50 : theme.spacing[borderRadius] || 0};
 `;

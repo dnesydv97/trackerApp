@@ -8,8 +8,7 @@ import Avatar from './Avatar';
 import Button from './Button';
 import List from './List';
 import Tabs from './Tabs';
-import Empty from './Empty';
-import Rating from './Rating';
+
 import InitialLoader from './InitialLoader';
 import Divider from './Divider';
 import Scroll from './Scroll';
@@ -30,8 +29,6 @@ export {
   Button,
   List,
   Tabs,
-  Empty,
-  Rating,
   InitialLoader,
   Divider,
   Scroll,
